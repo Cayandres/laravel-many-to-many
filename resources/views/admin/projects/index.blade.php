@@ -13,6 +13,7 @@
                 <th scope="col">Data</th>
                 <th scope="col">Azioni</th>
                 <th scope="col">Categoria</th>
+                <th scope="col">Tag</th>
                 <th scope="col">Elimina</th>
 
 
@@ -35,6 +36,18 @@
 
                     <td>
                         <div class="badge text-bg-primary">{{ $project->category->name }}</div>
+                    </td>
+
+                    <td class="badge text-bg-secondary">
+                        @forelse ( $project->tags as $tag )
+
+                        <span class="badge text-bg-secondary">{{ $tag->name }}</span>
+
+                        @empty
+
+                        <span>-no tag-</span>
+
+                        @endforelse
                     </td>
 
                     <td>
